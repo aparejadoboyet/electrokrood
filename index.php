@@ -7,6 +7,8 @@
         header("Location: login.php");
     }
 
+    require_once("connection.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -35,16 +37,22 @@
                     <th class="col">ID</th>
                     <th class="col">Username</th>
                     <th class="col">Password</th>
-                    <th class="col"> </th>
                 </tr>
             </thead>
             <tbody>
+<?php
+$sql = "select * from users";
+$result = $conn->query($sql);
+while($row = $result->fetch_assoc()){
+?>
                 <tr>
-                    <th class="col">SampleData</th>
-                    <th class="col">SampleData</th>
-                    <th class="col">SampleData</th>
-                    <th class="col">SampleData</th>
+                    <th class="col"><?=$row["uid"]?></th>
+                    <th class="col"><?=$row["username"]?></th>
+                    <th class="col"><?=$row["password"]?></th>
                 </tr>
+<?php
+}
+?>
             </tbody>
         </table>
     </div>
