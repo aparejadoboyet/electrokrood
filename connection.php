@@ -1,17 +1,14 @@
 <?php
 
-$host = "sql304.byetcluster.com";
-$username = "if0_34835350";
-$password = "J3TeOfZTWOQvKs";
-$database = "if0_34835350_krood_db";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "krood_db";
 
-$conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
-else {
-    echo("Successful!");
 }
 
 ?>
